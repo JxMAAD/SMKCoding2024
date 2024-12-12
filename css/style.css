@@ -1,0 +1,203 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Menggunakan font yang lebih modern */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header dan headerbar default */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative; /* Header normal saat di awal halaman */
+    width: 100%;
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease; /* Transisi halus */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* headerbar gaya */
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ddd;
+}
+
+/* Sticky header saat scroll */
+.sticky-header {
+    position: fixed; /* Tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222; /* Ubah warna latar belakang saat sticky */
+    padding: 10px 20px; /* Kurangi padding agar header lebih ramping */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk memberikan efek melayang */
+    z-index: 1000; /* Tetap di atas konten lainnya */
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Hamburger menu styling */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+#hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: background-color 0.3s ease; /* Menambahkan efek transisi */
+}
+
+/* Konten Utama */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#biografijendral {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+    gap: 20px; /* Jarak antar item */
+}
+
+#biografijendral img {
+    width: 100%;
+    max-width: 15%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#biografijendral article {
+    text-align: center;
+}
+
+/* Artikel terakhir berada di tengah */
+#biografijendral article:last-child {
+    grid-column: span 2; /* Membuat artikel terakhir membentang 2 kolom */
+    justify-self: center; /* Pusatkan konten di tengah */
+}
+
+
+#biografijendral article:last-child img {
+    max-width: 10%; /* Samakan lebar gambar artikel terakhir dengan artikel lain */
+    height: auto; /* Tinggi proporsional otomatis */
+}
+
+ul {
+    padding: 20px; /* Menambahkan padding 20px di semua sisi */
+    border-radius: 10px; /* Menambahkan sudut membulat */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #ddd;
+}
+
+#jenderal {
+    display: flex;
+    align-items: flex-start; /* Mengatur item untuk sejajar di bagian atas */
+}
+
+#imgjendral {
+    width: 50%;
+    height: auto; /* Mengatur tinggi otomatis untuk menjaga rasio aspek */
+    margin-top: 6%;
+    margin-left: 25%;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        display: none; /* Menu disembunyikan secara default */
+        position: absolute;
+        top: 60px; /* Mengatur posisi dropdown */
+        right: 0;
+        transform: translateY(-0%);
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        transition: all 0.3s ease; /* Menambahkan efek transisi */
+    }
+
+    header ul.active {
+        display: flex; /* Menampilkan menu saat aktif */
+    }
+
+    .social-media {
+        flex-direction: column;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+}
